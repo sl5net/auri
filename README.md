@@ -1,6 +1,3 @@
-### `README.md` für das `sl5net/auri` Repository
-
-```markdown
 <div align="center">
   <h1>🦋 SL5 Auri (Lite)</h1>
   <p><strong>The lightweight, offline Voice Control for Embedded Systems & IoT.</strong></p>
