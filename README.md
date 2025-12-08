@@ -1,3 +1,6 @@
+### `README.md` für das `sl5net/auri` Repository
+
+```markdown
 <div align="center">
   <h1>🦋 SL5 Auri (Lite)</h1>
   <p><strong>The lightweight, offline Voice Control for Embedded Systems & IoT.</strong></p>
@@ -42,3 +45,53 @@ cd auri
 # Run the installer wrapper
 chmod +x install.sh
 ./install.sh
+```
+
+### 2. What happens now?
+1.  The installer fetches the latest stable **SL5 Aura Core**.
+2.  It installs system dependencies (Python, Vosk, Sound-Utils).
+3.  It **EXCLUDES** all heavy AI tools (Ollama, Training Data, Large Models).
+4.  It automatically downloads the **lightweight German model** (45 MB).
+
+---
+
+## 🎮 Usage
+
+After installation, Auri behaves exactly like Aura, just faster and without the "Chat with AI" feature.
+
+### Start the Service
+```bash
+# Start the background service
+./scripts/start_aura_service.sh
+```
+
+### Add your own Commands
+Edit the map files in `config/maps/`. Auri uses pure Python RegEx for matching.
+
+```python
+# config/maps/my_commands.py
+from plugins import BaseMap
+
+# Simple Rule: When you say "Light on", it runs the command
+# Auri is deterministic: precise input = precise output.
+my_map = [
+    ("Licht an", r"(licht|lampe)\s+an", "kasa --plug 1 on"),
+    ("System Status", r"status", "htop"),
+]
+```
+
+---
+
+## 🛠️ Hardware Recommendations
+
+*   **CPU:** Any 64-bit CPU (ARM64 or x86_64). Single Core is enough.
+*   **RAM:** 512 MB minimum (1 GB recommended for comfort).
+*   **Microphone:** Any USB microphone or ReSpeaker HAT.
+
+---
+
+## ❤️ Credits
+
+Auri is maintained by the [SL5NET](https://github.com/sl5net) team.
+If you need the full power of LLMs (Ollama), check out the main project: **[SL5 Aura](https://github.com/sl5net/SL5-aura-service)**.
+
