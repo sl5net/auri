@@ -29,6 +29,11 @@ It uses the same deterministic RegEx engine but strips away all heavy AI depende
 
 ---
 
+> ⚠️ **Status: Early Development**
+> Installation scripts and service wrappers are currently in active development.
+> The architecture and configuration format are stable — contributions welcome!
+
+
 ## 🚀 Installation
 
 Auri uses a smart wrapper to install the SL5 Core in "Diet Mode".
@@ -86,6 +91,19 @@ my_map = [
 *   **Microphone:** Any USB microphone or ReSpeaker HAT.
 
 ---
+
+## 🗺️ Roadmap
+
+| Status | Feature |
+| :--- | :--- |
+| ✅ Done | Deterministic RegEx engine (shared with Aura Core) |
+| ✅ Done | Vosk Small model support (45 MB) |
+| 🔄 In Progress | Installation wrapper (`install.sh`) |
+| 🔄 In Progress | Optional connect to SL5 Aura Service (full LLM mode) |
+| 🔜 Planned | Multi-user session support (shared Vosk server, isolated user contexts) |
+| 🔜 Planned | JWT-based authentication for multi-client setups |
+| 🔜 Planned | REST API for IoT device integration |
+| 🔜 Planned | k3s / Docker deployment for edge computing |
 
 ## ❤️ Credits
 
